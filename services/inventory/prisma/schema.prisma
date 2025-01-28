@@ -20,7 +20,7 @@ model Inventory {
   quantity  Int
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  History   History[]
+  histories   History[]
 }
 
 enum ActionType {
@@ -34,6 +34,8 @@ model History {
   quantityChanged Int
   lastQuantity    Int
   newQuantity     Int
-  inventory       Inventory  @relation(fields: [inventoryId], references: [id])
+  inventory       Inventory  @relation(fields: [inventoryId], references: [id], onDelete: Cascade)
   inventoryId     String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 }
