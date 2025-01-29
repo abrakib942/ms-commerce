@@ -20,7 +20,7 @@ const limiter = rateLimit({
     handler: (req, res) => {
         res.status(429).send("Too many requests, please try again later.");
     }
-})
+}) 
 app.use('/api',limiter);
 
 // request logger
