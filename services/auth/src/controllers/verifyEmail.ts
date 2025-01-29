@@ -69,9 +69,9 @@ const verifyEmail = async (
 
     // send success email
     await axios.post(`${EMAIL_SERVICE}/emails/send`, {
-      to: user.email,
+      recipient: user.email,
       subject: "Email Verification",
-      text: "Your email has been verified successfully",
+      body: "Your email has been verified successfully",
       source: "email-verification",
     });
 

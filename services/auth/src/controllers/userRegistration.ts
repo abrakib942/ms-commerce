@@ -74,7 +74,7 @@ const userRegistration = async (
       data: {
         userId: user.id,
         code,
-        expiredAt: new Date(new Date().getTime() + 5 * 60 * 1000), // 5 minutes
+        expiredAt: new Date(new Date().getTime() + 1 * 60 * 60 * 1000), // 1 hour
       },
     });
 
