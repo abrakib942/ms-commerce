@@ -44,12 +44,6 @@ const userLogin = async (
     });
 
     if (!user) {
-      await createLoginHistory({
-        userId: "unknown",
-        ipAddress,
-        userAgent,
-        attempt: "FAILED",
-      });
       return res.status(400).json({ message: "Invalid credentials" });
     }
 

@@ -21,7 +21,7 @@ const verifyToken = async (
 
     const user = await prisma.user.findUnique({
       where: {
-        id: (decoded as any).id,
+        id: (decoded as any).userId,
       },
       select: {
         id: true,
